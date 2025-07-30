@@ -1,8 +1,9 @@
 import streamlit as st
 import openai
-import os
+
+# Load the API key from Streamlit Cloud secrets
 api_key = st.secrets["OPENAI_API_KEY"]
-client = openai.OpenAI(api_key=api_key)
+openai.api_key = api_key  # Set it globally
 
 # Streamlit UI setup
 st.set_page_config(page_title="MathBot", page_icon="🧠")
